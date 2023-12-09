@@ -6,6 +6,8 @@ export default function Search() {
   const navigate = useNavigate();
   const [sidebardata, setSidebardata] = useState({
     searchTerm: '',
+    userAllListingsId: '',
+    address:'',
     type: 'all',
     parking: false,
     furnished: false,
@@ -24,6 +26,8 @@ export default function Search() {
   useEffect(() => {
     const urlParams = new URLSearchParams(location.search);
     const searchTermFromUrl = urlParams.get('searchTerm');
+    const userAllListingsIdFromUrl = urlParams.get('userAllListingsId');
+    const addressFromUrl = urlParams.get('address');
     const typeFromUrl = urlParams.get('type');
     const parkingFromUrl = urlParams.get('parking');
     const furnishedFromUrl = urlParams.get('furnished');
@@ -34,6 +38,8 @@ export default function Search() {
     if (
       
       searchTermFromUrl ||
+      userAllListingsIdFromUrl ||
+      addressFromUrl ||
       typeFromUrl ||
       parkingFromUrl ||
       furnishedFromUrl ||
@@ -44,6 +50,8 @@ export default function Search() {
       setSidebardata({
         // ...sidebardata,
         searchTerm: searchTermFromUrl || '',
+        userAllListingsId: userAllListingsIdFromUrl || '',
+        address: addressFromUrl || '',
         type: typeFromUrl || 'all',
         parking: parkingFromUrl === 'true' ? true : false,
         furnished: furnishedFromUrl === 'true' ? true : false,
@@ -84,6 +92,12 @@ export default function Search() {
     if (e.target.id === 'searchTerm') {
       setSidebardata({ ...sidebardata, searchTerm: e.target.value });
     }
+    if (e.target.id === 'userAllListingsId') {
+      setSidebardata({ ...sidebardata, userAllListingsId: e.target.value });
+    }
+    if (e.target.id === 'address') {
+      setSidebardata({ ...sidebardata, address: e.target.value });
+    }
 
     if (
       e.target.id === 'parking' ||
@@ -110,6 +124,8 @@ export default function Search() {
     e.preventDefault();
     const urlParams = new URLSearchParams();
     urlParams.set('searchTerm', sidebardata.searchTerm);
+    urlParams.set('userAllListingsId', sidebardata.userAllListingsId);
+    urlParams.set('address', sidebardata.address);
 
     urlParams.set('type', sidebardata.type);
     urlParams.set('parking', sidebardata.parking);
@@ -141,7 +157,7 @@ export default function Search() {
         <form onSubmit={handleSubmit} className='flex flex-col gap-8'>
           <div className='flex items-center gap-2'>
             <label className='whitespace-nowrap font-semibold'>
-              Search Term:
+              Search by Name:
             </label>
             <input
               type='text'
@@ -149,6 +165,32 @@ export default function Search() {
               placeholder='Search...'
               className='border rounded-lg p-3 w-full'
               value={sidebardata.searchTerm}
+              onChange={handleChange}
+            />
+          </div>
+          <div className='flex items-center gap-2'>
+            <label className='whitespace-nowrap font-semibold'>
+              Search by Id:
+            </label>
+            <input
+              type='text'
+              id='userAllListingsId'
+              placeholder='Search...'
+              className='border rounded-lg p-3 w-full'
+              value={sidebardata.userAllListingsId}
+              onChange={handleChange}
+            />
+          </div>
+          <div className='flex items-center gap-2'>
+            <label className='whitespace-nowrap font-semibold'>
+              Search by Address:
+            </label>
+            <input
+              type='text'
+              id='address'
+              placeholder='Search...'
+              className='border rounded-lg p-3 w-full'
+              value={sidebardata.address}
               onChange={handleChange}
             />
           </div>

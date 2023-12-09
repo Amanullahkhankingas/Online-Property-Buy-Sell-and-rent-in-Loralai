@@ -118,6 +118,10 @@ export default function Listing() {
               <span className='font-semibold text-black'>Area in Square feet : </span>
               <span className='text-green-800 font-extrabold'>{listing.squarefeetarea}</span>
             </p>
+            <p className='text-slate-800'>
+              <span className='font-semibold text-black'>Get All Our Listings by id : </span>
+              <span className='text-blue-800 font-extrabold'>{listing.userAllListingsId }</span>
+            </p>
             <ul className='text-green-900 font-semibold text-sm flex flex-wrap items-center gap-4 sm:gap-6'>
               <li className='flex items-center gap-1 whitespace-nowrap '>
                 <FaBed className='text-lg' />

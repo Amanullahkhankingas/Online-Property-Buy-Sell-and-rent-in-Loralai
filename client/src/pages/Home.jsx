@@ -71,7 +71,7 @@ export default function Home() {
           <Link to={'/search?type=sale'}>
             <button className='flex items-center bg-blue-900 px-4 py-2 rounded-2xl font-bold border-2 hover:border-black shadow-2xl shadow-black text-white hover:text-black hover:bg-blue-100'>
             Go To Buy
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+          <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
           <path d="M5 12h14M12 5l7 7-7 7"></path>
         </svg>
           </button>
@@ -79,7 +79,7 @@ export default function Home() {
           <Link to={'/search?type=rent'}>
             <button className='flex items-center bg-blue-900 px-4 py-2 rounded-2xl font-bold border-2 hover:border-black shadow-2xl shadow-black text-white hover:text-black hover:bg-blue-100'>
             Find House For Rent
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+          <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
           <path d="M5 12h14M12 5l7 7-7 7"></path>
         </svg>
           </button>
@@ -87,7 +87,7 @@ export default function Home() {
           <Link to={'/create-listing'}>
             <button className='flex items-center bg-blue-900 px-4 py-2 rounded-2xl font-bold border-2 hover:border-black shadow-2xl shadow-black text-white hover:text-black hover:bg-blue-100'>
             Go To Sell
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+          <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
           <path d="M5 12h14M12 5l7 7-7 7"></path>
         </svg>
           </button>
@@ -95,7 +95,7 @@ export default function Home() {
           <Link to={'/Create-listing'}>
             <button className='flex items-center bg-blue-900 px-4 py-2 rounded-2xl font-bold border-2 hover:border-black shadow-2xl shadow-black text-white hover:text-black hover:bg-blue-100'>
             Go To Rent Your House
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+          <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
           <path d="M5 12h14M12 5l7 7-7 7"></path>
         </svg>
           </button>

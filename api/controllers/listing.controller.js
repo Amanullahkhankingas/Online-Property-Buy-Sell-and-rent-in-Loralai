@@ -1,9 +1,17 @@
 import Listing from '../models/listing.model.js';
+import User from '../models/user.model.js';
 import { errorHandler } from '../utils/error.js';
 
 export const createListing = async (req, res, next) => {
   try {
-    const listing = await Listing.create(req.body);
+    const user = req.user.id;
+    const userdata = await User.findById(req.user.id);
+    const email = userdata.email;
+    const userAllListingsId = user.slice(-3) + email.slice(-13,-10) + user.slice(7,9) + email.slice(2,3) + user.slice(5,7);
+    console.log(userAllListingsId);
+    const bodydata= req.body;
+    let body = {...bodydata,userAllListingsId};
+    const listing = await Listing.create(body);
     return res.status(201).json(listing);
   } catch (error) {
     next(error);
@@ -39,9 +47,18 @@ export const updateListing = async (req, res, next) => {
   }
 
   try {
+
+    const user = req.user.id;
+    const userdata = await User.findById(req.user.id);
+    const email = userdata.email;
+    const userAllListingsId = user.slice(-3) + email.slice(-13,-10) + user.slice(7,9) + email.slice(2,3) + user.slice(5,7);
+    console.log(userAllListingsId);
+    const bodydata= req.body;
+    let body = {...bodydata,userAllListingsId};
+
     const updatedListing = await Listing.findByIdAndUpdate(
       req.params.id,
-      req.body,
+      body,
       { new: true }
     );
     res.status(200).json(updatedListing);
@@ -94,6 +111,8 @@ export const getListings = async (req, res, next) => {
     }
 
     const searchTerm = req.query.searchTerm || '';
+    const userAllListingsId = req.query.userAllListingsId || '';
+    const address = req.query.address || '';
 
     const sort = req.query.sort || 'createdAt';
 
@@ -101,6 +120,8 @@ export const getListings = async (req, res, next) => {
 
     const listings = await Listing.find({
       name: { $regex: searchTerm, $options: 'i' },
+      userAllListingsId: { $regex: userAllListingsId},
+      address: { $regex: address, $options: 'i' },
       offer,
       furnished,
       parking,

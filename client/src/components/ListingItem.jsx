@@ -51,12 +51,12 @@ export default function ListingItem({ listing }) {
                 : `${listing.bathrooms} Bath `}
             </div>
           </div>
+        </div>
           </div>
-          <p className='text-md font-bold  line-clamp-2 '>
+          <p className='text-md font-bold '>
            Total Area Sq: <span className='text-green-700'>{listing.squarefeetarea}</span>
           </p>
           </div>
-        </div>
       </Link>
     </div>
   );
