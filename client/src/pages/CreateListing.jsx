@@ -200,7 +200,7 @@ export default function CreateListing() {
           />
 
           <input
-            type='text'
+            type='number'
             placeholder='Contact and Whats up No'
             className='border p-3 rounded-lg'
             id='contactNo'
@@ -307,21 +307,6 @@ export default function CreateListing() {
                 )}
               </div>
             </div>
-            <div className='flex items-center gap-2'>
-              <input
-                type='text'
-                id='squarefeetarea'
-                min='50'
-                max='10000000'
-                required
-                className='p-3 border border-gray-300 rounded-lg'
-                onChange={handleChange}
-                value={formData.squarefeetarea}
-              />
-              <div className='flex flex-col items-center'>
-                <p>Square Feet Area</p>
-              </div>
-            </div>
             {formData.offer && (
               <div className='flex items-center gap-2'>
                 <input
@@ -342,8 +327,25 @@ export default function CreateListing() {
                   )}
                 </div>
               </div>
+
             )}
           </div>
+          <div className='flex items-center gap-2'>
+              <input
+                type='number'
+                id='squarefeetarea'
+                min='50'
+                max='10000000'
+                required
+                className='p-3 border border-gray-300 rounded-lg'
+                onChange={handleChange}
+                value={formData.squarefeetarea}
+              
+              />
+              <div className='flex flex-col items-center'>
+                <p>Square Feet Area</p>
+              </div>
+            </div>
         </div>
         <div className='flex flex-col flex-1 gap-4'>
           <p className='font-semibold'>

@@ -67,9 +67,10 @@ export default function Home() {
           Let's get started...
         </Link>
 
-        <div className='flex flex-col absolute top-28 gap-5 right-12 justify-between'>
+        {/* <div className='flex flex-col absolute top-28 gap-5 right-12 justify-between '> */}
+        <div className='flex md:flex-col  text-[0.50rem] md:text-lg md:absolute md:top-28 md:gap-5 md:right-12 mt-28'>
           <Link to={'/search?type=sale'}>
-            <button className='flex items-center bg-blue-900 px-4 py-2 rounded-2xl font-bold border-2 hover:border-black shadow-2xl shadow-black text-white hover:text-black hover:bg-blue-100'>
+            <button className='flex  items-center bg-blue-900 md:px-4 md:py-2 px-2 py-1 rounded-2xl md:font-bold border-2 hover:border-black shadow-2xl shadow-black text-white hover:text-black hover:bg-blue-100'>
             Go To Buy
           <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
           <path d="M5 12h14M12 5l7 7-7 7"></path>
@@ -77,7 +78,7 @@ export default function Home() {
           </button>
           </Link>
           <Link to={'/search?type=rent'}>
-            <button className='flex items-center bg-blue-900 px-4 py-2 rounded-2xl font-bold border-2 hover:border-black shadow-2xl shadow-black text-white hover:text-black hover:bg-blue-100'>
+            <button className='flex  items-center bg-blue-900 md:px-4 md:py-2 px-2 py-1 rounded-2xl md:font-bold border-2 hover:border-black shadow-2xl shadow-black text-white hover:text-black hover:bg-blue-100'>
             Find House For Rent
           <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
           <path d="M5 12h14M12 5l7 7-7 7"></path>
@@ -85,7 +86,7 @@ export default function Home() {
           </button>
           </Link>
           <Link to={'/create-listing'}>
-            <button className='flex items-center bg-blue-900 px-4 py-2 rounded-2xl font-bold border-2 hover:border-black shadow-2xl shadow-black text-white hover:text-black hover:bg-blue-100'>
+            <button className='flex  items-center bg-blue-900 md:px-4 md:py-2 px-2 py-1 rounded-2xl md:font-bold border-2 hover:border-black shadow-2xl shadow-black text-white hover:text-black hover:bg-blue-100'>
             Go To Sell
           <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
           <path d="M5 12h14M12 5l7 7-7 7"></path>
@@ -93,7 +94,7 @@ export default function Home() {
           </button>
           </Link>
           <Link to={'/Create-listing'}>
-            <button className='flex items-center bg-blue-900 px-4 py-2 rounded-2xl font-bold border-2 hover:border-black shadow-2xl shadow-black text-white hover:text-black hover:bg-blue-100'>
+            <button className='flex  items-center bg-blue-900 md:px-4 md:py-2 px-2 py-1 rounded-2xl md:font-bold border-2 hover:border-black shadow-2xl shadow-black text-white hover:text-black hover:bg-blue-100'>
             Go To Rent Your House
           <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
           <path d="M5 12h14M12 5l7 7-7 7"></path>
@@ -126,7 +127,7 @@ export default function Home() {
       
       {/* listing results for offer, sale and rent */}
 
-      <div className='max-w-6xl mx-auto p-3 flex flex-col gap-8 mt-52'>
+      <div className='max-w-6xl mx-auto p-3 flex flex-col gap-8 md:mt-52 mt-8'>
         {offerListings && offerListings.length > 0 && (
           <div className=''>
             <div className='my-3'>
